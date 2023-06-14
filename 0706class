@@ -1,0 +1,15 @@
+#Question: How can you resize an image named image.jpg to a target width and height using NumPy?
+from PIL import Image
+# Load the image using PIL
+image = Image.open("image.jpg")
+# Convert the image to a NumPy array
+image_array = np.array(image)
+# Define the target width and height
+target_width = 800
+target_height = 600
+# Resize the image array using numpy.resize()
+resized_array = np.resize(image_array, (target_height, target_width, 3))  # Assuming RGB image (3 channels)
+# Convert the resized array back to an image
+resized_image = Image.fromarray(resized_array)
+# Save the resized image
+resized_image.save("resized_image.jpg") (edited) 
